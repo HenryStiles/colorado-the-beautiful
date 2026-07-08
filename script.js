@@ -24,35 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Filter System
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const cardContainers = document.querySelectorAll('.card-container');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons and add to clicked
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const filterValue = button.getAttribute('data-filter');
-
-      cardContainers.forEach(container => {
-        const cardCategory = container.getAttribute('data-category');
-        
-        // Before filtering, if the card was flipped, flip it back so it looks clean
-        const innerCard = container.querySelector('.card');
-        if (innerCard.classList.contains('flipped')) {
-          innerCard.classList.remove('flipped');
-          innerCard.setAttribute('aria-expanded', 'false');
-        }
-
-        if (filterValue === 'all' || cardCategory === filterValue) {
-          container.classList.remove('hidden');
-        } else {
-          container.classList.add('hidden');
-        }
-      });
-    });
-  });
 });
