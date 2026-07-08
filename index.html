@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorado the Beautiful | Interactive Photo Gallery</title>
+  <meta name="description" content="Explore Colorado's most majestic natural landmarks. An interactive photo gallery highlighting beautiful places in Colorado, shared in honor of Colorado's 150th anniversary. Click to flip for details.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient glowing backgrounds for modern look -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <div class="container">
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <span class="logo-tagline">Colorado's 150th Anniversary</span>
+        <h1>Colorado the Beautiful</h1>
+      </div>
+      <p class="subtitle">A photo gallery of the places we love, shared in honor of Colorado's 150th anniversary. We've collected 150 photos to celebrate the Centennial State. Click any card to read their stories.</p>
+
+      <!-- Category Filter Navigation -->
+      <nav class="filter-container" aria-label="Gallery category filter">
+        <button class="filter-btn active" data-filter="all">All Landmarks</button>
+        <button class="filter-btn" data-filter="peaks-lakes">Peaks & Lakes</button>
+        <button class="filter-btn" data-filter="rocks-canyons">Rocks, Canyons & Valleys</button>
+      </nav>
+    </header>
+
+    <!-- Main Grid Section -->
+    <main class="gallery-grid">
+
+      <!-- Card 1: Curecanti National Recreation Area -->
+      <div class="card-container" data-category="rocks-canyons" id="landmark-curecanti">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Curecanti National Recreation Area, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Rocks & Canyons</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/curecanti.jpg" alt="Stunning view of Curecanti National Recreation Area's mesas and valleys">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Gunnison River, CO
+              </div>
+              <h2 class="card-title">Curecanti</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Rocks & Canyons</span>
+              <h2 class="card-back-title">Curecanti</h2>
+            </div>
+            <p class="card-back-desc">"This was our first observance of coatimundis, native to the Southwest."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Arliss Blackledge</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Feature</span>
+                <span class="fact-value">Reservoirs & Cliffs</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Wildlife</span>
+                <span class="fact-value">Coatimundis</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Location</span>
+                <span class="fact-value">Gunnison, CO</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Clear Lake -->
+      <div class="card-container" data-category="peaks-lakes" id="landmark-clear-lake">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Clear Lake, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Peaks & Lakes</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/clear_lake.jpg" alt="Emerald waters of Clear Lake nestled in the high-alpine mountains">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                San Juan Mountains, CO
+              </div>
+              <h2 class="card-title">Clear Lake</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Peaks & Lakes</span>
+              <h2 class="card-back-title">Clear Lake</h2>
+            </div>
+            <p class="card-back-desc">"This is one of my favorite hikes in the San Juan Mountains. I have years of memories with friends here, and the strenuous climb is so worth the payout."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Lauren Wallace</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Hike Difficulty</span>
+                <span class="fact-value">Strenuous</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Range</span>
+                <span class="fact-value">San Juan Mountains</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Feature</span>
+                <span class="fact-value">High Alpine Basin</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Kenosha Pass -->
+      <div class="card-container" data-category="peaks-lakes" id="landmark-kenosha-pass">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Kenosha Pass, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Peaks & Lakes</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/kenosha_pass.jpg" alt="Panoramic view of Kenosha Pass during autumn with bright golden aspen forests">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Park County, CO
+              </div>
+              <h2 class="card-title">Kenosha Pass</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Peaks & Lakes</span>
+              <h2 class="card-back-title">Kenosha Pass</h2>
+            </div>
+            <p class="card-back-desc">"Standing at Kenosha Pass, looking down into South Park, the vast expanse of land is breathtaking. The light playing on the meadow as clouds passed over the sun was stunning as nature’s aspen display was in full color. This valley is home to pronghorn, elk and more."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Christie Green</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Elevation</span>
+                <span class="fact-value">10,000 ft</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Wildlife</span>
+                <span class="fact-value">Elk & Pronghorn</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Best Season</span>
+                <span class="fact-value">Autumn</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Evergreen -->
+      <div class="card-container" data-category="peaks-lakes" id="landmark-evergreen">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Evergreen, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Peaks & Lakes</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/evergreen.jpg" alt="A majestic bull elk walking over a rise in Evergreen CO">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Evergreen, CO
+              </div>
+              <h2 class="card-title">Evergreen</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Peaks & Lakes</span>
+              <h2 class="card-back-title">Evergreen</h2>
+            </div>
+            <p class="card-back-desc">"This elk bull was scraping his antlers through the grass, impressing the dozen elk cows nearby. He came walking over the rise as I was in my car, and I was able to capture his photo from inside the car safely. His presence in an Evergreen, Colorado, neighborhood is not unusual as there is a resident herd of 400 animals in this vicinity."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Christie Green</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Wildlife</span>
+                <span class="fact-value">Elk (Herd of 400)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Area Type</span>
+                <span class="fact-value">Mountain Foothills</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">County</span>
+                <span class="fact-value">Jefferson County</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: James Peak Wilderness -->
+      <div class="card-container" data-category="peaks-lakes" id="landmark-james-peak">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="James Peak Wilderness, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Peaks & Lakes</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/james_peak.jpg" alt="Jagged alpine peaks and tundra in the James Peak Wilderness">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Continental Divide, CO
+              </div>
+              <h2 class="card-title">James Peak</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Peaks & Lakes</span>
+              <h2 class="card-back-title">James Peak</h2>
+            </div>
+            <p class="card-back-desc">"Soaring above 13,000 feet, the James Peak Wilderness protects an incredible stretch of alpine landscape."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Patrick Kelly-Fischer</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Elevation</span>
+                <span class="fact-value">Over 13,000 ft</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Status</span>
+                <span class="fact-value">Designated Wilderness</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Landscape</span>
+                <span class="fact-value">Alpine Tundra</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Sprague Lake -->
+      <div class="card-container" data-category="peaks-lakes" id="landmark-sprague-lake">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Sprague Lake, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Peaks & Lakes</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/sprague_lake.jpg" alt="Vibrant sunset reflections on Sprague Lake in Rocky Mountain National Park">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Rocky Mountain NP, CO
+              </div>
+              <h2 class="card-title">Sprague Lake</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Peaks & Lakes</span>
+              <h2 class="card-back-title">Sprague Lake</h2>
+            </div>
+            <p class="card-back-desc">"Rocky Mountain National Park holds a special place in my heart because it continually inspires and humbles me. Whether I am watching the sun set over the Rockies, seeing storms roll across the mountains, spotting wildlife, or taking in the views from Trail Ridge Road, the park always renews my spirit. It leaves me with a deep sense of peace, wonder, and gratitude."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Laurie Randolph</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Location</span>
+                <span class="fact-value">Rocky Mountain NP</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Key Scenic Road</span>
+                <span class="fact-value">Trail Ridge Road</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Highlights</span>
+                <span class="fact-value">Wildlife & Sunsets</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Telluride -->
+      <div class="card-container" data-category="rocks-canyons" id="landmark-telluride">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Telluride, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Rocks & Canyons</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/telluride.jpg" alt="Awe-inspiring view of Ajax Peak framed by Telluride Main Street">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                San Miguel County, CO
+              </div>
+              <h2 class="card-title">Telluride</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Rocks & Canyons</span>
+              <h2 class="card-back-title">Telluride</h2>
+            </div>
+            <p class="card-back-desc">"Every October, the Telluride Horror Show takes place. After being inside watching a dark movie, opening the doors onto this vista is surreal. On this day, the skies opened to this awe-inspiring view of Ajax Peak, taken from Main Street."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Christie Green</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Elevation</span>
+                <span class="fact-value">8,750 ft</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Scenic View</span>
+                <span class="fact-value">Ajax Peak</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Annual Event</span>
+                <span class="fact-value">Horror Show (Oct)</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Mt Bierstadt -->
+      <div class="card-container" data-category="peaks-lakes" id="landmark-bierstadt">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="Mt Bierstadt, click for details">
+          <!-- Front Face -->
+          <div class="card-front">
+            <span class="card-badge">Peaks & Lakes</span>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="images/mt_bierstadt.jpg" alt="Climbers hiking up the scenic slopes of Mt Bierstadt">
+            </div>
+            <div class="card-overlay">
+              <div class="card-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Front Range, CO
+              </div>
+              <h2 class="card-title">Mt Bierstadt</h2>
+              <div class="card-hint">
+                <span>Read Story</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Back Face -->
+          <div class="card-back">
+            <div class="card-back-header">
+              <span class="card-back-badge">Peaks & Lakes</span>
+              <h2 class="card-back-title">Mt Bierstadt</h2>
+            </div>
+            <p class="card-back-desc">"Of Colorado's 50-plus mountains that reach 14,000 feet above sea level, Mt. Bierstadt is one of the most accessible, and is a great place to make some new friends (but seriously, don't feed the mountain goats and marmots)."</p>
+            <div class="card-facts">
+              <div class="fact-item">
+                <span class="fact-label">Shared By</span>
+                <span class="fact-value">Patrick Kelly-Fischer</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Elevation</span>
+                <span class="fact-value">14,065 ft</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Mountain Type</span>
+                <span class="fact-value">14er (Fourteener)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Wildlife Warn</span>
+                <span class="fact-value">Don't feed wildlife</span>
+              </div>
+            </div>
+            <button class="flip-back-btn" aria-label="Flip card to front">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+              Flip Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-logo">Colorado the Beautiful</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
