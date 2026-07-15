@@ -164,7 +164,7 @@ h1 {
 /* GALLERY GRID */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 2.5rem;
   perspective: 1500px; /* Essential for 3D flip card */
 }
