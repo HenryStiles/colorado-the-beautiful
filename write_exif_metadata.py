@@ -8,7 +8,7 @@ EXCEL_PATH = "/Users/henrys/source/colorado_the_beautiful/Outreach list.xlsx"
 
 # Path to the directory containing your local images before you upload them.
 # Change this to the actual folder path where your photos are stored locally.
-IMAGE_DIR = "/Users/henrys/source/colorado_the_beautiful/images"
+IMAGE_DIR = "/Users/henrys/source/colorado_the_beautiful/local copy of images"
 
 # Path to your exiftool installation (we detected it at /opt/homebrew/bin/exiftool)
 EXIFTOOL_PATH = "/opt/homebrew/bin/exiftool"
