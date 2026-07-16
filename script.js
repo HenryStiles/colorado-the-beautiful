@@ -25,3 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Automatically send document height to parent window (WordPress) for dynamic iframe resizing
+function sendHeightToParent() {
+  const height = document.body.scrollHeight || document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: 'resize-iframe', height: height }, '*');
+}
+
+// Trigger height update on load, resize, and orientation change
+window.addEventListener('load', sendHeightToParent);
+window.addEventListener('resize', sendHeightToParent);
+
+// Also observe DOM changes (like when cards are flipped or dynamic cards are added)
+if (window.ResizeObserver) {
+  const observer = new ResizeObserver(sendHeightToParent);
+  observer.observe(document.body);
+}
