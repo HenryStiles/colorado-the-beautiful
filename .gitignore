@@ -3,8 +3,10 @@ local copy of images/
 temp_images/
 recovered_images/
 
-# Ignore Excel files / Outreach lists containing local contact data
+# Ignore Excel files and Word documents containing local contact data and notes
 *.xlsx
 Outreach list.xlsx
+*.docx
+
 
 
