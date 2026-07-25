@@ -6,7 +6,7 @@ import openpyxl
 
 # File paths
 EXCEL_PATH = "/Users/henrys/source/colorado_the_beautiful/Outreach list.xlsx"
-HTML_PATH = "/Users/henrys/source/colorado_the_beautiful/index.html"
+HTML_PATH = "/Users/henrys/source/colorado_the_beautiful/gallery.html"
 
 def clean_slug(text):
     """Generates a clean ID slug from place name."""
@@ -28,8 +28,8 @@ def build_card_html(row_idx, submitter, place_name, city, photo_url, story):
 
     card = f"""
       <!-- Card: {place_esc} (by {submitter_esc}) -->
-      <div class="card-container" id="landmark-{slug}">
-        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="{place_esc}, click for details">
+      <div class="card-container" id="landmark-{slug}" data-title="{place_esc}" data-submitter="{submitter_esc}" data-location="{city_esc}" data-photo="{photo_url_esc}" data-story="{story_esc}">
+        <div class="card" role="button" tabindex="0" aria-expanded="false" aria-label="{place_esc}, click to enlarge details">
           <!-- Front Face -->
           <div class="card-front">
             <div class="card-image-wrapper">
