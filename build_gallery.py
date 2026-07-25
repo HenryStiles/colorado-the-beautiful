@@ -4,9 +4,10 @@ import re
 import html
 import openpyxl
 
-# File paths
+# Configuration
 EXCEL_PATH = "/Users/henrys/source/colorado_the_beautiful/Outreach list.xlsx"
 HTML_PATH = "/Users/henrys/source/colorado_the_beautiful/gallery.html"
+BASE_IMAGE_URL = "https://environmentamerica.org/wp-content/uploads/2026/07/"
 
 def clean_slug(text):
     """Generates a clean ID slug from place name."""
@@ -90,20 +91,23 @@ def main():
     
     cards_html = []
     
-    # Read rows skipping header
-    for idx, row in enumerate(ws.iter_rows(min_row=2, values_only=True), start=2):
-        submitter = row[0]
-        place_name = row[2]
-        city = row[3]
-        photo_url = row[4]
-        story = row[5]
+    # Read rows 2 to 132
+    for idx, row in enumerate(ws.iter_rows(min_row=2, max_row=132, values_only=True), start=2):
+        submitter = str(row[0]).strip() if row[0] else 'Anonymous'
+        place_name = str(row[2]).strip() if row[2] else 'Colorado Landmark'
+        city = str(row[3]).strip() if row[3] else ''
+        filename = str(row[4]).strip() if row[4] else ''
+        story = str(row[5]).strip() if row[5] else ''
         
-        # Check if row has valid data
-        if not submitter or not place_name or not photo_url:
+        # Check if row has a valid filename
+        if not filename:
             continue
+
+        # Photo path for web hosting
+        photo_path = f"{BASE_IMAGE_URL}{filename}" if not filename.startswith('http') else filename
             
         print(f"  Row {idx}: Processing '{place_name}' by '{submitter}'...")
-        card_html = build_card_html(idx, submitter, place_name, city, photo_url, story)
+        card_html = build_card_html(idx, submitter, place_name, city, photo_path, story)
         cards_html.append(card_html)
         
     print(f"Generated {len(cards_html)} cards.")
