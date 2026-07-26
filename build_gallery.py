@@ -34,7 +34,7 @@ def build_card_html(row_idx, submitter, place_name, city, photo_url, story):
           <!-- Front Face -->
           <div class="card-front">
             <div class="card-image-wrapper">
-              <img class="card-image" src="{photo_url_esc}" alt="{place_esc}">
+              <img class="card-image" src="{photo_url_esc}" alt="{place_esc}" referrerpolicy="no-referrer" loading="lazy">
             </div>
             <div class="card-overlay">
               <div class="card-location">
@@ -103,8 +103,8 @@ def main():
         if not filename:
             continue
 
-        # Photo path for web hosting
-        photo_path = f"{BASE_IMAGE_URL}{filename}" if not filename.startswith('http') else filename
+        # Photo path for web hosting with cache buster
+        photo_path = f"{BASE_IMAGE_URL}{filename}?v=1.0" if not filename.startswith('http') else filename
             
         print(f"  Row {idx}: Processing '{place_name}' by '{submitter}'...")
         card_html = build_card_html(idx, submitter, place_name, city, photo_path, story)
