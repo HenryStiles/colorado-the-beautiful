@@ -2,6 +2,7 @@
 local copy of images/
 temp_images/
 recovered_images/
+new_images_to_upload/
 
 # Ignore Excel files and Word documents containing local contact data and notes
 *.xlsx
