@@ -81,7 +81,7 @@ def main():
     ws = wb['SUBMISSION Yeses']
 
     spreadsheet_entries = []
-    for idx, row in enumerate(ws.iter_rows(min_row=2, max_row=132, values_only=True), start=2):
+    for idx, row in enumerate(ws.iter_rows(min_row=2, max_row=ws.max_row, values_only=True), start=2):
         submitter = str(row[0]).strip() if row[0] else 'Anonymous'
         place_name = str(row[2]).strip() if row[2] else 'Colorado Landmark'
         city = str(row[3]).strip() if row[3] else ''
