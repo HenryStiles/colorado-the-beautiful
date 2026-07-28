@@ -43,6 +43,39 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!modal || cardDataList.length === 0) return;
     currentIndex = index;
     updateModalContent();
+
+    // Check if running inside an iframe
+    const isInIframe = window.self !== window.top;
+    if (isInIframe) {
+      const clickedCard = cardContainers[index];
+      if (clickedCard) {
+        const rect = clickedCard.getBoundingClientRect();
+        // Calculate card's vertical position relative to the top of the iframe document
+        const cardY = rect.top + window.scrollY;
+        
+        const modalContainer = modal.querySelector('.modal-container');
+        if (modalContainer) {
+          // Adjust overlay to expand to the full height of the iframe document
+          modal.style.position = 'absolute';
+          modal.style.height = document.documentElement.scrollHeight + 'px';
+          modal.style.alignItems = 'flex-start';
+          
+          // Position the modal container near the clicked card
+          const targetTop = Math.max(20, cardY - 150);
+          modalContainer.style.marginTop = targetTop + 'px';
+        }
+      }
+    } else {
+      // Reset styles to default if not in an iframe
+      modal.style.position = '';
+      modal.style.height = '';
+      modal.style.alignItems = '';
+      const modalContainer = modal.querySelector('.modal-container');
+      if (modalContainer) {
+        modalContainer.style.marginTop = '';
+      }
+    }
+
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
   }
