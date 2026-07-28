@@ -8,7 +8,7 @@ import openpyxl
 EXCEL_PATH = "/Users/henrys/source/colorado_the_beautiful/Outreach list.xlsx"
 IMAGE_DIR = "/Users/henrys/source/colorado_the_beautiful/temp_images"
 EXIFTOOL_PATH = "/opt/homebrew/bin/exiftool"
-PROJECT_PREFIX = "Colorado the Beautiful 150th Anniversary"
+PROJECT_PREFIX = "Colorado is Beautiful 150th Anniversary"
 
 def tag_image_metadata(filepath, author, title, story):
     """Runs exiftool to write EXIF, IPTC, and XMP metadata tags to an image file."""
