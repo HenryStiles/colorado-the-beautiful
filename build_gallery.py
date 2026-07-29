@@ -104,7 +104,7 @@ def main():
             continue
 
         # Photo path for web hosting with cache buster
-        photo_path = f"{BASE_IMAGE_URL}{filename}?v=1.0" if not filename.startswith('http') else filename
+        photo_path = f"{BASE_IMAGE_URL}{filename}?v=1.2" if not filename.startswith('http') else filename
             
         print(f"  Row {idx}: Processing '{place_name}' by '{submitter}'...")
         card_html = build_card_html(idx, submitter, place_name, city, photo_path, story)
