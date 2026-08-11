@@ -24,6 +24,8 @@ def tag_image_metadata(filepath, author, title, story):
         f"-Artist={author}",
         f"-By-line={author}",
         f"-Creator={author}",
+        f"-Credit={author}",
+        f"-Source={author}",
         
         # 2. License tags
         "-Copyright=Used by permission",
