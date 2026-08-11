@@ -53,11 +53,11 @@ def main():
     ws.cell(row=7, column=1, value="Total Submissions").font = bold_font
 
     # 3. Write dynamic Excel formulas for tallies (Column B)
-    # B2 to B5: COUNTIF in Column G of main sheet
-    ws['B2'] = "=COUNTIF('SUBMISSION Yeses'!G$2:G$1000, A2)"
-    ws['B3'] = "=COUNTIF('SUBMISSION Yeses'!G$2:G$1000, A3)"
-    ws['B4'] = "=COUNTIF('SUBMISSION Yeses'!G$2:G$1000, A4)"
-    ws['B5'] = "=COUNTIF('SUBMISSION Yeses'!G$2:G$1000, A5)"
+    # B2 to B5: COUNTIF in Column F of main sheet (F is Category in the new sheet structure)
+    ws['B2'] = "=COUNTIF('SUBMISSION Yeses'!F$2:F$1000, A2)"
+    ws['B3'] = "=COUNTIF('SUBMISSION Yeses'!F$2:F$1000, A3)"
+    ws['B4'] = "=COUNTIF('SUBMISSION Yeses'!F$2:F$1000, A4)"
+    ws['B5'] = "=COUNTIF('SUBMISSION Yeses'!F$2:F$1000, A5)"
     
     # B6: Total active names in Column A minus the sum of categorized items
     ws['B6'] = "=COUNTA('SUBMISSION Yeses'!A$2:A$1000) - SUM(B$2:B$5)"

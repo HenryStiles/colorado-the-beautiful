@@ -14,58 +14,44 @@ def main():
     wb = openpyxl.load_workbook(EXCEL_PATH)
     ws = wb['SUBMISSION Yeses']
 
-    # Set up Column G header (Column 7)
-    ws.cell(row=1, column=7, value="Category")
+    # Column F (6) is "Category" in the new master sheet structure
+    # Ensure header is written
+    ws.cell(row=1, column=6, value="Category")
     
     # Define keywords for legislators (case-insensitive)
     legislator_keywords = ["representative", "senator", "congressman", "congresswoman", "rep.", "sen."]
 
     auto_legislator_count = 0
-    auto_ff_count = 0
-    auto_coalition_count = 0
+    already_filled_count = 0
     blank_count = 0
 
-    print("Analyzing rows and applying category classifications...")
+    print("Analyzing rows and applying legislator auto-classifications to empty category cells...")
     
     # Iterate through rows starting from row 2
     for r_idx in range(2, ws.max_row + 1):
         name_val = ws.cell(row=r_idx, column=1).value
-        type_val = ws.cell(row=r_idx, column=2).value
+        category_val = ws.cell(row=r_idx, column=6).value
         
         # Skip if name is empty
         if not name_val:
             continue
             
         name_str = str(name_val).lower().strip()
-        type_str = str(type_val).strip() if type_val else ""
         
-        assigned_category = None
-        
-        # 1. Check for Legislator keywords first
+        # If category is already filled, keep it as is
+        if category_val:
+            already_filled_count += 1
+            continue
+            
+        # Check for Legislator keywords
         if any(kw in name_str for kw in legislator_keywords):
-            assigned_category = "Legislators"
+            ws.cell(row=r_idx, column=6, value="Legislators")
             auto_legislator_count += 1
-            
-        # 2. Check for Friend/Family based on Column B
-        elif type_str == "Friend/Family":
-            assigned_category = "Friends and family"
-            auto_ff_count += 1
-            
-        # 3. Check for Coalition partner based on Column B
-        elif type_str == "Coalition":
-            assigned_category = "Coalition partners"
-            auto_coalition_count += 1
-            
         else:
             blank_count += 1
-            
-        # Write to Column G (Column 7)
-        ws.cell(row=r_idx, column=7, value=assigned_category)
 
-    # 4. Create the Data Validation dropdown menu for Column G
-    print("Creating Excel dropdown validation for Column G...")
-    
-    # Options must be comma separated inside quotes
+    # Create the Data Validation dropdown menu for Column F (Column 6)
+    print("Creating Excel dropdown validation for Column F...")
     options = '"Friends and family,Legislators,Professional photographers,Coalition partners"'
     
     dv = DataValidation(
@@ -81,17 +67,15 @@ def main():
     # Add validation to the sheet
     ws.add_data_validation(dv)
     
-    # Apply to G2 through G1000
-    dv.add("G2:G1000")
+    # Apply to F2 through F1000 (Column F)
+    dv.add("F2:F1000")
 
     # Save workbook
     wb.save(EXCEL_PATH)
     
-    print("\nSummary of categories applied:")
-    print(f"  - Legislators (Auto-detected): {auto_legislator_count}")
-    print(f"  - Friends & Family (From Column B): {auto_ff_count}")
-    print(f"  - Coalition Partners (From Column B): {auto_coalition_count}")
-    # We subtract 1 from blank_count to ignore header if it got evaluated, but here we skipped header
+    print("\nSummary of categories:")
+    print(f"  - Auto-classified as Legislators: {auto_legislator_count}")
+    print(f"  - Retained already filled categories: {already_filled_count}")
     print(f"  - Left blank for manual selection: {blank_count}")
     print(f"\nSuccessfully saved changes to: {EXCEL_PATH}")
 

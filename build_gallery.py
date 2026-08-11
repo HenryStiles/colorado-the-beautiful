@@ -94,10 +94,10 @@ def main():
     # Read all rows dynamically skipping header
     for idx, row in enumerate(ws.iter_rows(min_row=2, values_only=True), start=2):
         submitter = str(row[0]).strip() if row[0] else 'Anonymous'
-        place_name = str(row[2]).strip() if row[2] else 'Colorado Landmark'
-        city = str(row[3]).strip() if row[3] else ''
-        filename = str(row[4]).strip() if row[4] else ''
-        story = str(row[5]).strip() if row[5] else ''
+        place_name = str(row[1]).strip() if row[1] else 'Colorado Landmark'
+        city = str(row[2]).strip() if row[2] else ''
+        filename = str(row[3]).strip() if row[3] else ''
+        story = str(row[4]).strip() if row[4] else ''
         
         # Check if row has a valid filename
         if not filename:
