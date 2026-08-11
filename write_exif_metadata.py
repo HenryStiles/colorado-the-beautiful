@@ -18,26 +18,45 @@ def tag_image_metadata(filepath, author, title, story):
     else:
         full_description = PROJECT_PREFIX
 
+    # Extract organization from parentheticals or dashes if present
+    import re
+    org = "Environment Colorado"
+    photographer = author
+    m = re.search(r'\((.*?)\)', author)
+    if m:
+        org = m.group(1).strip()
+        photographer = re.sub(r'\(.*?\)', '', author).strip()
+    elif " - " in author:
+        parts = author.split(" - ")
+        org = parts[0].strip()
+        photographer = parts[1].strip()
+    elif " – " in author:
+        parts = author.split(" – ")
+        org = parts[0].strip()
+        photographer = parts[1].strip()
+
     cmd = [
         EXIFTOOL_PATH,
-        # 1. Author tags
-        f"-Artist={author}",
-        f"-By-line={author}",
-        f"-Creator={author}",
-        f"-Credit={author}",
-        f"-Source={author}",
+        # 1. Author / Photographer tags
+        f"-Artist={photographer}",
+        f"-By-line={photographer}",
+        f"-Creator={photographer}",
         
-        # 2. License tags
+        # 2. Credit / Source tags (Organization)
+        f"-Credit={org}",
+        f"-Source={org}",
+        
+        # 3. License tags
         "-Copyright=Used by permission",
         "-CopyrightNotice=Used by permission",
         "-Rights=Used by permission",
         
-        # 3. Story / Description tags (with project prefix)
+        # 4. Story / Description tags (with project prefix)
         f"-ImageDescription={full_description}",
         f"-Caption-Abstract={full_description}",
         f"-Description={full_description}",
         
-        # 4. Title / Object Name tags
+        # 5. Title / Object Name tags
         f"-ObjectName={title}",
         f"-Title={title}",
         
