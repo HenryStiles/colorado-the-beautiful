@@ -41,10 +41,10 @@ def tag_image_metadata(filepath, author, title, story):
         f"-Artist={photographer}",
         f"-By-line={photographer}",
         f"-Creator={photographer}",
+        f"-Credit={photographer}",
         
         # 2. Credit / Source tags (Organization)
-        f"-Credit={org}",
-        f"-Source={org}",
+        "-Source=",
         
         # 3. License tags
         "-Copyright=Used by permission",
